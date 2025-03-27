@@ -18,7 +18,7 @@
     <properties>
         <java.version>17</java.version>
         <spring-boot.version>3.2.1</spring-boot.version>
-        <tomcat.version>9.0.88</tomcat.version>  <!-- Ensure Java 17 compatibility -->
+        <tomcat.version>9.0.99</tomcat.version>  <!-- Ensure Java 17 compatibility -->
     </properties>
 
     <dependencies>
