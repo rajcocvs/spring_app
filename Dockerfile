@@ -1,4 +1,4 @@
-FROM openjdk:17-jdk-slim
+FROM openjdk:17-jdk-slim-bookworm
 # Update and upgrade system packages
 RUN apt-get update && apt-get upgrade -y && apt-get clean
 WORKDIR /app
