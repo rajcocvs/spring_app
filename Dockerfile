@@ -12,5 +12,6 @@ EXPOSE 9090
 
 
 # Run the Spring Boot application
-CMD ["sh", "-c", "java -jar /app/app.jar --server.port=9090 && tail -f /dev/null"]
+CMD ["java", "-jar", "/app/app.jar", "--server.port=9090", "--server.address=0.0.0.0"]
+
 
