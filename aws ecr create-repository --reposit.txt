@@ -1,0 +1,16 @@
+aws ecr create-repository --repository-name ncplrajcorepo
+
+aws ecs create-cluster --cluster-name ncplrajco
+
+
+715841367723.dkr.ecr.ap-south-1.amazonaws.com/ncplrajcorepo:latest
+
+
+aws ecs create-service \
+    --cluster ncplrajco \
+    --service-name ncplecsservice \
+    --task-definition your-task-definition \
+    --desired-count 1 \
+    --launch-type FARGATE \
+    --network-configuration "awsvpcConfiguration={subnets=[mysubnet1],securityGroups=[mywebserverSG],assignPublicIp=ENABLED}"
+
