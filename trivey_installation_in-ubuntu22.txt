@@ -1,0 +1,15 @@
+
+
+sudo apt update -y
+sudo apt install -y curl
+
+# Add the Trivy repo
+curl -fsSL https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo tee /etc/apt/trusted.gpg.d/trivy.asc
+echo "deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -cs) main" | sudo tee -a /etc/apt/sources.list.d/trivy.list
+
+# Install Trivy
+sudo apt update -y
+sudo apt install -y trivy
+
+# Verify installation
+trivy --version
