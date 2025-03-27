@@ -5,10 +5,11 @@ FROM eclipse-temurin:17-jdk
 WORKDIR /app
 
 # Copy the JAR file into the container
-COPY target/demo-1.0.0.jar app.jar
+COPY target/demo-1.0.0.jar /app/app.jar
 
-# Expose port 9090
+# Expose port 9090 (for documentation purposes)
 EXPOSE 9090
 
+
 # Run the Spring Boot application
-ENTRYPOINT ["java", "-jar", "/app/app.jar", "--server.port=9090"]
+CMD ["java", "-jar", "/app/app.jar", "--server.port=9090"]
