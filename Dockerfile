@@ -2,4 +2,4 @@ FROM openjdk:17-jdk-slim
 WORKDIR /app
 COPY target/demo-1.0.0.jar app.jar
 EXPOSE 9090
-ENTRYPOINT ["java", "-jar", "app.jar"]
+CMD ["java", "-jar", "app.jar", "--server.port=9090", "--server.address=0.0.0.0"]
